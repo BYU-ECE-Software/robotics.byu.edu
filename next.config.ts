@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 /** @type {import('next').NextConfig} */
 
 // const isProjectPage = true; // set to false if using username.github.io root
-const repo = "NASIT2026";
+const repo = "robotics.byu.edu";
 const nextConfig: NextConfig = {
   /* config options here */
   output: "export",

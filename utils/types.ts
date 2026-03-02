@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type Speaker = {
+export type Professor = {
   id: string;
   name: string;
   image?: string;
@@ -47,7 +47,7 @@ export type Poster = {
   session?: string;
 };
 
-export type Sponsor = {
+export type Lab = {
   id: string;
   name: string;
   logo?: string; // image path

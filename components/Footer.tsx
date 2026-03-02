@@ -96,13 +96,13 @@ const FooterBar = () => {
             </a>
           </div>
           <br></br>
-          <h3 className="text-l">Questions?</h3>
+          {/* <h3 className="text-l">Questions?</h3>
           <p>
             Willie Harrison
           </p>
           <p>
             willie.harrison@byu.edu
-          </p>
+          </p> */}
           {/* <a
               href="mailto:willie.harrison@byu.edu"
               target="_blank"

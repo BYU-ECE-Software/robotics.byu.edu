@@ -82,3 +82,7 @@ header {
   color: white;
   border: none;
 }
+
+h3 {
+  color: var(--byu-navy);
+}

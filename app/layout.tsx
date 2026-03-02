@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Robotics",
   description:
     "Join researchers, engineers, and students for talks, posters, and community at the North American School of Information Theory 2026 Conference.",
-  metadataBase: new URL("https://byu-ece-software.github.io/NASIT2026/"),
+  metadataBase: new URL("https://byu-ece-software.github.io/robotics.byu.edu/"),
   icons: {
     icon: {
       url: NEXT_PUBLIC_BASE_PATH + "/favicon.ico",
