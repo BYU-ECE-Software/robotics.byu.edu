@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
-import SpeakerCard from "@/components/cards/SpeakerCard";
+import ProfessorCard from "@/components/cards/ProfessorCard";
 import { professors } from "@/data/professors";
 
 export default function ProfessorsPage() {
@@ -16,7 +16,7 @@ export default function ProfessorsPage() {
       <Container wide>
         <div className="grid gap-4">
           {professors.map((p) => (
-            <SpeakerCard key={p.id} speaker={p} />
+            <ProfessorCard key={p.id} professor={p} />
           ))}
         </div>
       </Container>
