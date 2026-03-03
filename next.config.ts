@@ -20,8 +20,8 @@ const nextConfig: NextConfig = {
   
 };
 
-const NEXT_PUBLIC_BASE_PATH = `${repo}`;
+// const NEXT_PUBLIC_BASE_PATH = `${repo}`;
 
-export { NEXT_PUBLIC_BASE_PATH };
+// export { NEXT_PUBLIC_BASE_PATH };
 
 export default nextConfig;

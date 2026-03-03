@@ -3,7 +3,7 @@ import "@/app/globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { NEXT_PUBLIC_BASE_PATH } from "@/next.config";
+import nextConfig from "@/next.config";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://byu-ece-software.github.io/robotics.byu.edu/"),
   icons: {
     icon: {
-      url: NEXT_PUBLIC_BASE_PATH + "/favicon.ico",
-      href: NEXT_PUBLIC_BASE_PATH + "/favicon.ico",
+      url: nextConfig.env?.NEXT_PUBLIC_BASE_PATH + "/favicon.ico",
+      href: nextConfig.env?.NEXT_PUBLIC_BASE_PATH + "/favicon.ico",
     }
   },
 };

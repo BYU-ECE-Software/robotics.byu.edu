@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { NEXT_PUBLIC_BASE_PATH } from "@/next.config";
+import nextConfig from "@/next.config";
 
 export default function HomepageHero({
   title,
@@ -33,7 +33,7 @@ export default function HomepageHero({
       {/* Hero media */}
       <div className="relative w-full overflow-hidden" style={imageStyle}>
         <Image
-          src={NEXT_PUBLIC_BASE_PATH + image}
+          src={nextConfig.env?.NEXT_PUBLIC_BASE_PATH + image}
           alt=""
           fill
           priority

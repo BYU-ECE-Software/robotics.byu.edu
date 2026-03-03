@@ -3,9 +3,9 @@ import HomepageHero from "@/components/HomepageHero";
 import Section from "@/components/Section";
 
 export const metadata = {
-  title: "NASIT 2026 Conference",
+  title: "BYU Robotics",
   description:
-    "Join researchers, engineers, and students for talks, posters, and community at the North American School of Information Theory 2026 Conference.",
+    "Robotics at BYU",
 };
 
 export default function HomePage() {

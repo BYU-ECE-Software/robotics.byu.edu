@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Professor } from "@/utils/types";
-import { NEXT_PUBLIC_BASE_PATH } from "@/next.config";
+import nextConfig from "@/next.config";
 
 export default function ProfessorCard({ professor }: { professor: Professor }) {
   const imageSrc =
-    NEXT_PUBLIC_BASE_PATH + (professor.image || "/images/placeholder-person.jpg");
+    nextConfig.env?.NEXT_PUBLIC_BASE_PATH + (professor.image || "/images/placeholder-person.jpg");
 
   const CardInner = (
     <article

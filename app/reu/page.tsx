@@ -3,6 +3,7 @@
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
+import nextConfig from "@/next.config";
 
 export default function ReuPage() {
   return (
@@ -16,102 +17,199 @@ export default function ReuPage() {
       />
       <Container wide>
         <p>
-            Thanks for your interest in BYU&apos;s Robotics Pioneers: Research Experience for Undergraduates (REU) summer research internship program funded by the National Science Foundation (NSF)! Starting in the Summer of 2026, this 10-week program will enable non-BYU undergraduates to come to campus in Provo and participate in real-world research in robotics.
+          Thanks for your interest in BYU&apos;s Robotics Pioneers: Research
+          Experience for Undergraduates (REU) summer research internship program
+          funded by the National Science Foundation (NSF)! Starting in the
+          Summer of 2026, this 10-week program will enable non-BYU
+          undergraduates to come to campus in Provo and participate in
+          real-world research in robotics.
         </p>
         <br></br>
         <p>
-            Our goal is to develop accomplished and confident engineers and researchers who are innovators in the field of robotics. To achieve this BYU&apos;s Robotics Pioneers: REU program provides undergraduate students with the opportunity to participate in real-world robotics research and gain experience to prepare for graduate school and a meaningful or impactful career in robotics.
+          Our goal is to develop accomplished and confident engineers and
+          researchers who are innovators in the field of robotics. To achieve
+          this BYU&apos;s Robotics Pioneers: REU program provides undergraduate
+          students with the opportunity to participate in real-world robotics
+          research and gain experience to prepare for graduate school and a
+          meaningful or impactful career in robotics.
         </p>
         <br></br>
         <p>
-            Research opportunities include the ability to participate in projects across the spectrum of robotics with the goal of enabling robots to operate in extreme environments. Potential projects include: coral reef monitoring using autonomous underwater robots, mapping of chemical and radioactive hazards using aerial drones, and soft-robots for space applications, among many others.
+          Research opportunities include the ability to participate in projects
+          across the spectrum of robotics with the goal of enabling robots to
+          operate in extreme environments. Potential projects include: coral
+          reef monitoring using autonomous underwater robots, mapping of
+          chemical and radioactive hazards using aerial drones, and soft-robots
+          for space applications, among many others.
         </p>
         <br></br>
         <Image
-            src="/images/article/boat.jpg"
-            alt="REU students working on a robotics project"
-            width={1200}
-            height={800}
-            className="rounded-lg mb-8 mt-8">
-        
-
-        </Image>
+          src={
+            nextConfig.env?.NEXT_PUBLIC_BASE_PATH + "/images/article/boat.jpg"
+          }
+          alt="REU students working on a robotics project"
+          width={1200}
+          height={800}
+          className="rounded-lg mb-8 mt-8"
+        ></Image>
         <p>
-            To apply, click the link below (note that NSF restricts the REU program to US citizens and permanent residents):
+          To apply, click the link below (note that NSF restricts the REU
+          program to US citizens and permanent residents):
         </p>
         <button
-            onClick={() => window.open("https://reu.byu.edu", "_blank")}
-            className="bg-[var(--byu-royal)] text-white px-4 py-2 mb-4 mt-4 rounded-lg hover:bg-[var(--byu-navy)] hover:cursor-pointer transition-colors"
+          onClick={() => window.open("https://reu.byu.edu", "_blank")}
+          className="bg-[var(--byu-royal)] text-white px-4 py-2 mb-4 mt-4 rounded-lg hover:bg-[var(--byu-navy)] hover:cursor-pointer transition-colors"
         >
-            Apply to the REU
+          Apply to the REU
         </button>
-      <br></br>
-      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">Program Overview</h3>
-        <p>
-            This year the program will run from <b>May 11, 2026</b> to <b>July 17, 2026</b>
-            </p>
-            <br></br>
-            <p>
-                REU participants will receive:
-            </p>
-            <ul className="list-disc list-inside">
-                <li>A $7,000* salary stipend for the 10-week program</li>
-                <li>A small additional “settling-in” stipend to help with housing and initial costs</li>
-                <li>Partial or full travel funding (for selected students) to present their research at a regional or national conference after the program</li>
-                </ul>
-        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">Application Details</h3>
-        <p>
-            Applications must be received by 11:59pm MST on <b>February 9th, 2026</b> to receive full consideration.
-            </p>
         <br></br>
-        <p>The application will ask you for the following (not a complete list):</p>
-        <ul className="list-disc list-inside">
-            <li>Your GPA and your major GPA</li>
-            <li>A digital transcript (we don&apos;t require an official transcript)</li>
-            <li>Your top four choices of advisors/research project areas of interest and why you are interested in those areas</li>
-            <li>A short paragraph on how participating in the BYU summer research program will help further your academic and career goals</li>
-            <li>A short paragraph on what attracts you to our BYU program(s) in particular</li>
-            <li>A short paragraph on how you can contribute in making this BYU REU summer experience an inclusive, interesting, and collaborative adventure for all</li>
-            <li>A one page resume to upload with your application</li>
-            <li>Contact information (email addresses) for at least two individuals who will write letters of recommendation for you. We will reach out directly to your references to ask for their letter or recommendation. Note that we must receive your letter of recommendation by Feb 29, 2026 for you to receive full consideration. Please ensure your references are willing to write a recommendation and are aware of the deadline before submitting your application.</li>
-      </ul>
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">
+          Program Overview
+        </h3>
+        <p>
+          This year the program will run from <b>May 11, 2026</b> to{" "}
+          <b>July 17, 2026</b>
+        </p>
         <br></br>
-        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">Timeline</h3>
+        <p>REU participants will receive:</p>
         <ul className="list-disc list-inside">
-            <li>Feb 9, 2026 - Applications Due</li>
-            <li>February - Zoom Interviews</li>
-            <li>Feb 29, 2026 - Recommendation Letters Due</li>
-            <li>Mid March - First batch of offer letters sent out</li>
-            <li>End of March - Request first batch of students to notify us of their decisions</li>
-            <li>April - Additional offer letters sent out as needed</li>
-            </ul>
+          <li>A $7,000* salary stipend for the 10-week program</li>
+          <li>
+            A small additional “settling-in” stipend to help with housing and
+            initial costs
+          </li>
+          <li>
+            Partial or full travel funding (for selected students) to present
+            their research at a regional or national conference after the
+            program
+          </li>
+        </ul>
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">
+          Application Details
+        </h3>
+        <p>
+          Applications must be received by 11:59pm MST on{" "}
+          <b>February 9th, 2026</b> to receive full consideration.
+        </p>
+        <br></br>
+        <p>
+          The application will ask you for the following (not a complete list):
+        </p>
+        <ul className="list-disc list-inside">
+          <li>Your GPA and your major GPA</li>
+          <li>
+            A digital transcript (we don&apos;t require an official transcript)
+          </li>
+          <li>
+            Your top four choices of advisors/research project areas of interest
+            and why you are interested in those areas
+          </li>
+          <li>
+            A short paragraph on how participating in the BYU summer research
+            program will help further your academic and career goals
+          </li>
+          <li>
+            A short paragraph on what attracts you to our BYU program(s) in
+            particular
+          </li>
+          <li>
+            A short paragraph on how you can contribute in making this BYU REU
+            summer experience an inclusive, interesting, and collaborative
+            adventure for all
+          </li>
+          <li>A one page resume to upload with your application</li>
+          <li>
+            Contact information (email addresses) for at least two individuals
+            who will write letters of recommendation for you. We will reach out
+            directly to your references to ask for their letter or
+            recommendation. Note that we must receive your letter of
+            recommendation by Feb 29, 2026 for you to receive full
+            consideration. Please ensure your references are willing to write a
+            recommendation and are aware of the deadline before submitting your
+            application.
+          </li>
+        </ul>
+        <br></br>
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">
+          Timeline
+        </h3>
+        <ul className="list-disc list-inside">
+          <li>Feb 9, 2026 - Applications Due</li>
+          <li>February - Zoom Interviews</li>
+          <li>Feb 29, 2026 - Recommendation Letters Due</li>
+          <li>Mid March - First batch of offer letters sent out</li>
+          <li>
+            End of March - Request first batch of students to notify us of their
+            decisions
+          </li>
+          <li>April - Additional offer letters sent out as needed</li>
+        </ul>
 
-            <Image src="/images/article/drone.jpg" alt="REU Timeline" width={1200} height={800} className="rounded-lg mb-8 mt-8"></Image>
-        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">Eligibility</h3>
+        <Image
+          src={nextConfig.env?.NEXT_PUBLIC_BASE_PATH+"/images/article/drone.jpg"}
+          alt="REU Timeline"
+          width={1200}
+          height={800}
+          className="rounded-lg mb-8 mt-8"
+        ></Image>
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight mt-4 mb-4">
+          Eligibility
+        </h3>
         <p>
-            <b>Citizenship or CPT:</b> Because the REU program is funded by the National Science Foundation, REU applicants must be U.S. citizens or permanent residents.</p>
-<br></br>
-<p><b>BYU Code of Conduct and Honor Code:</b> BYU is a religiously affiliated university, sponsored by the Church of Jesus Christ of Latter-day Saints. As such, all applicants must agree to the Code of Conduct and the BYU Honor Code. An ecclesiastical endorsement interview will be required to explain and provide an understanding of the commitments required by the honor code. </p>
-<br></br>
-<p>Although BYU is owned and operated by the Church of Jesus Christ of Latter-day Saints, we welcome students of all faiths as well as students who do not associate with any religion. Matters of religion and personal faith are not used in the admissions process. </p>
-<br></br>
-<p><b>School Level:</b> Students applying to the REU program must be currently enrolled as undergraduates at an accredited U.S. college or university and must have at least one semester to complete after the REU program is over.</p>
-<br></br>
-<p><b>BYU Visiting Student Requirements:</b> Students admitted to the REU program must also be formally accepted by BYU as &quot;visiting students&quot;. This requires: </p>
-      
-      <ul className="list-disc list-inside">
-        <li>2.5 GPA or higher</li>
-        <li>No criminal history</li>
-        <li>Being enrolled in research credits (paid for by the REU program)</li>
-        <li>Having a formal two-step interview in which you agree to abide BYU&apos;s Honor Code. See the Honor Code tab for more information.</li>
-      </ul>
-<br></br>
-      <p>
-        You are welcome to contact us to describe your specific situation if you have any other questions about eligibility; see the Contact Us tab.
-      </p>
+          <b>Citizenship or CPT:</b> Because the REU program is funded by the
+          National Science Foundation, REU applicants must be U.S. citizens or
+          permanent residents.
+        </p>
+        <br></br>
+        <p>
+          <b>BYU Code of Conduct and Honor Code:</b> BYU is a religiously
+          affiliated university, sponsored by the Church of Jesus Christ of
+          Latter-day Saints. As such, all applicants must agree to the Code of
+          Conduct and the BYU Honor Code. An ecclesiastical endorsement
+          interview will be required to explain and provide an understanding of
+          the commitments required by the honor code.{" "}
+        </p>
+        <br></br>
+        <p>
+          Although BYU is owned and operated by the Church of Jesus Christ of
+          Latter-day Saints, we welcome students of all faiths as well as
+          students who do not associate with any religion. Matters of religion
+          and personal faith are not used in the admissions process.{" "}
+        </p>
+        <br></br>
+        <p>
+          <b>School Level:</b> Students applying to the REU program must be
+          currently enrolled as undergraduates at an accredited U.S. college or
+          university and must have at least one semester to complete after the
+          REU program is over.
+        </p>
+        <br></br>
+        <p>
+          <b>BYU Visiting Student Requirements:</b> Students admitted to the REU
+          program must also be formally accepted by BYU as &quot;visiting
+          students&quot;. This requires:{" "}
+        </p>
+
+        <ul className="list-disc list-inside">
+          <li>2.5 GPA or higher</li>
+          <li>No criminal history</li>
+          <li>
+            Being enrolled in research credits (paid for by the REU program)
+          </li>
+          <li>
+            Having a formal two-step interview in which you agree to abide
+            BYU&apos;s Honor Code. See the Honor Code tab for more information.
+          </li>
+        </ul>
+        <br></br>
+        <p>
+          You are welcome to contact us to describe your specific situation if
+          you have any other questions about eligibility; see the Contact Us
+          tab.
+        </p>
       </Container>
 
-        <br></br>
+      <br></br>
     </>
   );
 }

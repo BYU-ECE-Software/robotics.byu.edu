@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NEXT_PUBLIC_BASE_PATH } from "@/next.config";
+import nextConfig from "@/next.config";
 import { Organizer } from "@/utils/types";
 
 export default function OrganizerCard({ person }: { person: Organizer }) {
   const imageSrc =
-    NEXT_PUBLIC_BASE_PATH +
+    nextConfig.env?.NEXT_PUBLIC_BASE_PATH +
     (person.image || "/images/placeholder-person.jpg");
 
   const CardInner = (

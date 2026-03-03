@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "./Navbar";
-import { NEXT_PUBLIC_BASE_PATH } from "@/next.config";
+import  nextConfig from "@/next.config";
 
 export default function Header() {
   return (
@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex items-center gap-1">
           <Link href="https://www.byu.edu" className="flex-shrink-0 mr-4 border-r-[1px] border-byuRoyal">
             <Image 
-              src={NEXT_PUBLIC_BASE_PATH + "/BYU_monogram_white.png"}
+              src={nextConfig.env?.NEXT_PUBLIC_BASE_PATH + "/BYU_monogram_white.png"}
               alt="BYU Logo" 
               width={100} 
               height={100}

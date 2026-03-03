@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Lab } from "@/utils/types";
-import { NEXT_PUBLIC_BASE_PATH } from "@/next.config";
+import nextConfig from "@/next.config";
 
 export default function LabLogo({ lab }: { lab: Lab }) {
   const content = (
     <Image
-      src={NEXT_PUBLIC_BASE_PATH + (lab.logo || "/images/placeholder-logo.png")}
+      src={nextConfig.env?.NEXT_PUBLIC_BASE_PATH + (lab.logo || "/images/placeholder-logo.png")}
       alt={lab.name}
       width={300}
       height={300}
