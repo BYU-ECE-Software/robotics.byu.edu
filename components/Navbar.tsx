@@ -4,12 +4,11 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/research-labs", label: "Research Labs" },
+  { href: "/faculty", label: "Faculty" },
   { href: "/reu", label: "REU" },
-  { href: "/professors", label: "Professors" },
-  { href: "/labs", label: "Labs" },
-  // { href: "/things-to-do", label: "Things to Do" },
-  { href: "/faqs", label: "FAQs" },
+  { href: "/get-involved", label: "Get Involved" },
+  { href: "/resources", label: "Resources" },
 ];
 
 export default function Navbar() {
