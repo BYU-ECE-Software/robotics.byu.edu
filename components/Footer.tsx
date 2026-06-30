@@ -51,6 +51,26 @@ const FooterBar = () => {
                 ECE Department
               </a>
             </li>
+            <li>
+              <a
+                href="https://www.me.byu.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline text-white"
+              >
+                ME Department
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://cs.byu.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline text-white"
+              >
+                CS Department
+              </a>
+            </li>
           </ul>
         </div>
 
