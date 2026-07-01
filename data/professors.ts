@@ -58,8 +58,9 @@ export const professors: Professor[] = [
       id: "s8",
       name: "Brady Moon",
       affiliation: "Mechanical Engineering",
-      image: "",
-      bio: "",
+      image: "/images/professors/moon.jpg",
+      bio: "Assistant Professor in the Mechanical Engineering Department at Brigham Young University and a faculty member of the FROST Lab. His research focuses on autonomous information gathering, motion and path planning, and machine learning for field robotics in real-world applications.",
+      link: "https://me.byu.edu/directory/brady-moon",
     },
     {
       id: "s9",
