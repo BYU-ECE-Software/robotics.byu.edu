@@ -6,6 +6,7 @@ export type Professor = {
   image?: string;
   affiliation?: string;
   bio?: string;
+  interests?: string;
   link?: string;
 };
 

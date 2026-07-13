@@ -7,7 +7,7 @@ export const labs: Lab[] = [
     name: "MAGICC Lab",
     affiliation: "Electrical & Computer Engineering",
     image: "/images/labs/magiccLab.svg",
-    bio: "Research in guidance, navigation, control, and autonomy for unmanned air and ground vehicles.",
+    bio: "The MAGICC Lab, or Multiple AGent Intelligent Coordination and Control Lab, focuses on research in navigation, guidance, and control for teams of autonomous unmanned aerial vehicles. The lab’s work includes cooperative GPS-denied navigation, UAS autopilot software through ROSflight, and sense-and-avoid methods for micro air vehicles. More broadly, the lab develops algorithms and systems that enable autonomous vehicles to coordinate effectively, operate in challenging environments, and support collaborative robotic missions.",
     link: "https://magicc.byu.edu/",
   },
   {

@@ -40,7 +40,7 @@ export default function ReuPage() {
       <PageHero
         title="Robotics Pioneers REU"
         subtitle="A summer of ambitious research, practical discovery, and preparation for what comes next."
-        image="/images/article/drone.jpg"
+        image="/images/droneChurch2.jpg"
         position="center 45%"
         height="560px"
       >

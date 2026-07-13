@@ -102,9 +102,9 @@ export default function Footer() {
               <FiMapPin aria-hidden="true" className="mt-1 shrink-0 text-[#7fbeeb]" />
               450 Engineering Building, Provo, UT 84602
             </p>
-            <a href="mailto:willie.harrison@byu.edu" className="flex items-center gap-3 hover:text-white">
+            <a href="mailto:romanv7@byu.edu" className="flex items-center gap-3 hover:text-white">
               <FiMail aria-hidden="true" className="shrink-0 text-[#7fbeeb]" />
-              willie.harrison@byu.edu
+              romanv7@byu.edu
             </a>
           </div>
         </div>

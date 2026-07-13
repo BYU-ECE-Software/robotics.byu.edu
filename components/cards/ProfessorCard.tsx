@@ -14,14 +14,14 @@ export default function ProfessorCard({ professor }: { professor: Professor }) {
 
   const card = (
     <article className="group flex h-full flex-col border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-[#7fbeeb] hover:shadow-[0_18px_45px_rgba(0,46,93,.12)]">
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#e9eff3]">
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#e9eff3]">
         {professor.image ? (
           <Image
             src={`${basePath}${professor.image}`}
             alt={professor.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover object-top grayscale-[12%] transition duration-500 group-hover:scale-[1.03] group-hover:grayscale-0"
+            className="object-cover object-center grayscale-[12%] transition duration-500 group-hover:scale-[1.03] group-hover:grayscale-0"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(135deg,#eaf1f6,#dbe7ef)]">
@@ -41,8 +41,13 @@ export default function ProfessorCard({ professor }: { professor: Professor }) {
         <h2 className="mt-3 text-2xl font-bold tracking-[-0.025em] text-[#002e5d]">
           {professor.name}
         </h2>
+        {professor.interests && (
+          <p className="mt-4 leading-7 text-slate-500">
+            {professor.interests}
+          </p>
+        )}
         {professor.bio && (
-          <p className="mt-4 line-clamp-4 leading-7 text-slate-600">
+          <p className="mt-4 leading-7 text-slate-600">
             {professor.bio}
           </p>
         )}

@@ -95,7 +95,7 @@ export default function GetInvolvedPage() {
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b6dcf6]">Still have questions?</p>
             <h2 className="mt-3 text-3xl font-bold">Start a conversation.</h2>
           </div>
-          <a href="mailto:willie.harrison@byu.edu" className="inline-flex items-center gap-3 bg-white px-6 py-4 text-sm font-bold text-[#002e5d] transition hover:bg-[#7fbeeb]">
+          <a href="mailto:romanv7@byu.edu" className="inline-flex items-center gap-3 bg-white px-6 py-4 text-sm font-bold text-[#002e5d] transition hover:bg-[#7fbeeb]">
             <FiMail aria-hidden="true" />
             Contact Robotics at BYU
           </a>
