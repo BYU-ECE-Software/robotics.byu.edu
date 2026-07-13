@@ -1,5 +1,4 @@
 import { FAQ } from "@/utils/types";
-import Link from "next/link";
 
 export const faqs: FAQ[] = [
   {

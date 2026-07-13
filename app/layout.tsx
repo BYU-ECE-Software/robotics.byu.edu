@@ -8,10 +8,10 @@ import nextConfig from "@/next.config";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Robotics",
+  title: "Robotics at BYU",
   description:
-    "Join researchers, engineers, and students for talks, posters, and community at the North American School of Information Theory 2026 Conference.",
-  metadataBase: new URL("https://byu-ece-software.github.io/robotics.byu.edu/"),
+    "Explore robotics research, faculty, laboratories, and student opportunities at Brigham Young University.",
+  metadataBase: new URL("https://byu-ece-software.github.io/"),
   icons: {
     icon: {
       url: nextConfig.env?.NEXT_PUBLIC_BASE_PATH + "/favicon.ico",
@@ -28,11 +28,11 @@ export default function SiteLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} bg-white text-(--byu-royal) antialiased`}
+        className={`${inter.className} bg-white text-[var(--foreground)] antialiased`}
       >
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>

@@ -4,7 +4,7 @@ import { FAQ } from "@/utils/types";
 
 export default function Accordion({ items }: { items: FAQ[] }) {
   return (
-    <div className="space-y-3">
+    <div className="divide-y divide-slate-200 border-y border-slate-200">
       {items.map((item, idx) => (
         <AccordionItem key={idx} question={item.question} answer={item.answer} />
       ))}
@@ -15,20 +15,22 @@ export default function Accordion({ items }: { items: FAQ[] }) {
 function AccordionItem({ question, answer }: { question: string; answer: ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="card overflow-hidden">
+    <div className="bg-white">
       <button
         type="button"
-        className="w-full flex items-center justify-between gap-3 bg-(--byu-navy) text-white px-4 py-3 text-left"
+        className="group flex w-full items-center justify-between gap-5 py-6 text-left text-[#002e5d]"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
-        <span className="font-medium leading-tight">{question}</span>
-        <Chevron className={`h-5 w-5 transition-transform ${open ? "rotate-180" : "rotate-0"}`} />
+        <span className="text-lg font-bold leading-tight sm:text-xl">{question}</span>
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-slate-300 transition group-hover:border-[#0047ba] group-hover:bg-[#0047ba] group-hover:text-white">
+          <Chevron className={`h-5 w-5 transition-transform ${open ? "rotate-180" : "rotate-0"}`} />
+        </span>
       </button>
 
       <div
-        className={`px-4 pb-4 pt-3 text-slate-700 transition-[max-height,opacity] duration-300 ease-out ${
-          open ? "max-h-192 opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden pr-12 text-slate-600 transition-[max-height,opacity] duration-300 ease-out ${
+          open ? "max-h-192 pb-7 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         {/* note: no <p> wrapper, because answer may contain multiple blocks */}

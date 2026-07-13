@@ -1,83 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 import { Professor } from "@/utils/types";
 import nextConfig from "@/next.config";
 
 export default function ProfessorCard({ professor }: { professor: Professor }) {
-  const imageSrc =
-    nextConfig.env?.NEXT_PUBLIC_BASE_PATH + (professor.image || "/images/placeholder-person.jpg");
+  const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
+  const initials = professor.name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2);
 
-  const CardInner = (
-    <article
-      id={professor.id}
-      className={[
-        "card p-4 md:p-6",
-        "flex flex-col sm:flex-row gap-4 sm:gap-6",
-        "transition-transform duration-200 ease-out",
-        "hover:-translate-y-0.5 hover:shadow-lg",
-        professor.link ? "cursor-pointer" : "",
-      ].join(" ")}
-    >
-      {/* Image */}
-      <div className="relative h-40 w-full sm:h-48 sm:w-[140px] overflow-hidden rounded-xl bg-slate-100 shrink-0">
-        <Image
-          src={imageSrc}
-          alt={professor.name}
-          fill
-          sizes="(max-width: 640px) 100vw, 140px"
-          className="object-cover"
-        />
+  const card = (
+    <article className="group flex h-full flex-col border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-[#7fbeeb] hover:shadow-[0_18px_45px_rgba(0,46,93,.12)]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#e9eff3]">
+        {professor.image ? (
+          <Image
+            src={`${basePath}${professor.image}`}
+            alt={professor.name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover object-top grayscale-[12%] transition duration-500 group-hover:scale-[1.03] group-hover:grayscale-0"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(135deg,#eaf1f6,#dbe7ef)]">
+            <span className="text-5xl font-black tracking-[-0.05em] text-[#002e5d]/25">
+              {initials}
+            </span>
+            <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(0,71,186,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(0,71,186,.12)_1px,transparent_1px)] [background-size:32px_32px]" />
+          </div>
+        )}
+        <div className="absolute bottom-0 left-0 h-1 w-16 bg-[#0047ba] transition-all duration-300 group-hover:w-full" />
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col justify-start min-w-0">
-        <h3 className="text-lg font-semibold leading-tight">
+      <div className="flex flex-1 flex-col p-6">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0047ba]">
+          {professor.affiliation || "Robotics faculty"}
+        </p>
+        <h2 className="mt-3 text-2xl font-bold tracking-[-0.025em] text-[#002e5d]">
           {professor.name}
-        </h3>
-
-        {professor.affiliation && (
-          <p className="mt-1 text-sm font-medium text-slate-600">
-            {professor.affiliation}
-          </p>
-        )}
-
+        </h2>
         {professor.bio && (
-          <p className="mt-3 text-slate-700 leading-relaxed text-sm md:text-base">
+          <p className="mt-4 line-clamp-4 leading-7 text-slate-600">
             {professor.bio}
           </p>
         )}
-
         {professor.link && (
-          <p className="mt-3 text-sm font-medium text-[var(--byu-royal)]">
-            View profile →
-          </p>
+          <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-bold text-[#002e5d]">
+            View faculty profile
+            <FiArrowUpRight aria-hidden="true" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </span>
         )}
       </div>
     </article>
   );
 
-  // Whole card clickable only if there is a link destination
-  if (professor.link) {
-    const isExternal = /^https?:\/\//i.test(professor.link);
+  if (!professor.link) return card;
 
-    return isExternal ? (
-      <a
-        href={professor.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--byu-royal)] rounded-2xl"
-      >
-        {CardInner}
-      </a>
-    ) : (
-      <Link
-        href={professor.link}
-        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--byu-royal)] rounded-2xl"
-      >
-        {CardInner}
-      </Link>
-    );
-  }
-
-  return CardInner;
+  const isExternal = /^https?:\/\//i.test(professor.link);
+  return isExternal ? (
+    <a href={professor.link} target="_blank" rel="noopener noreferrer" className="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0047ba]">
+      {card}
+    </a>
+  ) : (
+    <Link href={professor.link} className="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0047ba]">
+      {card}
+    </Link>
+  );
 }

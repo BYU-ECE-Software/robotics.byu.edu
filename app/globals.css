@@ -2,9 +2,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #243447;
   --byu-navy: #002e5d;
   --byu-royal: #0047ba;
+  --byu-light-blue: #7fbeeb;
+  --surface: #f3f6f8;
+  --border: #dce3e8;
 }
 
 @theme inline {
@@ -14,17 +17,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+}
+
+::selection {
+  background: var(--byu-light-blue);
+  color: var(--byu-navy);
 }
 
 /* Smooth underlines, focus rings, and typographic refinements */
@@ -34,6 +35,11 @@ body {
 
 a {
   text-underline-offset: 3px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .container-narrow {
@@ -52,10 +58,10 @@ a {
 
 /* Cards */
 .card {
-  @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+  @apply border border-slate-200 bg-white shadow-sm;
 }
 .card-hover {
-  @apply transition hover:shadow-md;
+  @apply transition duration-300 hover:-translate-y-1 hover:shadow-xl;
 }
 
 .nav-link-hover {
@@ -77,12 +83,10 @@ a {
   display: block;
 }
 
-header {
-  background-color: var(--byu-navy);
-  color: white;
-  border: none;
+.eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.24em] text-[var(--byu-royal)];
 }
 
-h3 {
-  color: var(--byu-navy);
+.text-link {
+  @apply inline-flex items-center gap-2 border-b-2 border-[var(--byu-royal)] pb-1 text-sm font-bold text-[var(--byu-navy)] transition-colors hover:text-[var(--byu-royal)];
 }
