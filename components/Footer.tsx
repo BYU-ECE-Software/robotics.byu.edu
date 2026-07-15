@@ -19,7 +19,6 @@ const departmentLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
     <footer className="bg-[#001f3f] text-white">
@@ -27,7 +26,7 @@ export default function Footer() {
         <div>
           <Link href="/" className="inline-flex items-center gap-4">
             <Image
-              src={`${basePath}/BYU_monogram_white.png`}
+              src={`/BYU_monogram_white.png`}
               alt=""
               width={100}
               height={100}

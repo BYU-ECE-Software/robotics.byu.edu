@@ -2,10 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Professor } from "@/utils/types";
-import nextConfig from "@/next.config";
 
 export default function ProfessorCard({ professor }: { professor: Professor }) {
-  const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
   const initials = professor.name
     .split(" ")
     .map((part) => part[0])
@@ -17,7 +15,7 @@ export default function ProfessorCard({ professor }: { professor: Professor }) {
       <div className="relative aspect-[4/5] overflow-hidden bg-[#e9eff3]">
         {professor.image ? (
           <Image
-            src={`${basePath}${professor.image}`}
+            src={`${professor.image}`}
             alt={professor.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

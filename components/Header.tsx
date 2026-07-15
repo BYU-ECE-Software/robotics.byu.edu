@@ -3,11 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiExternalLink } from "react-icons/fi";
-import nextConfig from "@/next.config";
 import Navbar from "./Navbar";
 
 export default function Header() {
-  const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#002e5d]/95 text-white shadow-[0_8px_30px_rgba(0,31,63,.12)] backdrop-blur-xl">
@@ -27,7 +25,7 @@ export default function Header() {
             className="group flex shrink-0 items-center gap-3 border-r border-white/25 pr-4"
           >
             <Image
-              src={`${basePath}/BYU_monogram_white.png`}
+              src={`/BYU_monogram_white.png`}
               alt=""
               width={100}
               height={100}

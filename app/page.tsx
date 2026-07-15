@@ -8,15 +8,12 @@ import {
   FiLayers,
   FiUsers,
 } from "react-icons/fi";
-import nextConfig from "@/next.config";
 
 export const metadata = {
   title: "Robotics at BYU",
   description:
     "Discover robotics research, faculty, labs, and student opportunities at Brigham Young University.",
 };
-
-const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const researchAreas = [
   {
@@ -71,7 +68,7 @@ export default function HomePage() {
     <>
       <section className="relative isolate min-h-[680px] overflow-hidden bg-[#001f3f] text-white lg:min-h-[760px]">
         <Image
-          src={`${basePath}/images/article/drone.jpg`}
+          src={`/images/article/drone.jpg`}
           alt="BYU researchers gathered around an autonomous aerial robot"
           fill
           priority
@@ -214,7 +211,7 @@ export default function HomePage() {
       <section className="grid bg-[#002e5d] text-white lg:grid-cols-2">
         <div className="relative min-h-[420px] lg:min-h-[650px]">
           <Image
-            src={`${basePath}/images/article/boat.jpg`}
+            src={`/images/article/boat.jpg`}
             alt="Autonomous underwater robots deployed from a research boat"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -288,7 +285,7 @@ export default function HomePage() {
 
       <section className="relative isolate overflow-hidden bg-[#001f3f] py-24 text-white sm:py-32">
         <Image
-          src={`${basePath}/images/heroes/hero-default.jpg`}
+          src={`/images/heroes/hero-default.jpg`}
           alt="BYU campus beneath Y Mountain"
           fill
           sizes="100vw"

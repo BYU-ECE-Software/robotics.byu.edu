@@ -4,7 +4,6 @@ import { Lab } from "@/utils/types";
 import nextConfig from "@/next.config";
 
 export default function LabCard({ lab, index = 0 }: { lab: Lab; index?: number }) {
-  const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
 
   const card = (
     <article className="group grid h-full overflow-hidden border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-[#7fbeeb] hover:shadow-[0_18px_45px_rgba(0,46,93,.12)]">
@@ -14,7 +13,7 @@ export default function LabCard({ lab, index = 0 }: { lab: Lab; index?: number }
         </span>
         <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(0,71,186,.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,71,186,.1)_1px,transparent_1px)] [background-size:36px_36px]" />
         <Image
-          src={`${basePath}${lab.image}`}
+          src={`${lab.image}`}
           alt={`${lab.name} logo`}
           width={260}
           height={160}

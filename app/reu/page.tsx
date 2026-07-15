@@ -8,8 +8,6 @@ export const metadata = {
   description: "A 10-week summer robotics research experience for undergraduate students at BYU.",
 };
 
-const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
-
 const benefits = [
   "$7,000 salary stipend for the 10-week program",
   "An additional settling-in stipend to help with housing and initial costs",
@@ -101,7 +99,7 @@ export default function ReuPage() {
       <section className="grid bg-[#002e5d] text-white lg:grid-cols-2">
         <div className="relative min-h-[420px] lg:min-h-[620px]">
           <Image
-            src={`${basePath}/images/article/boat.jpg`}
+            src={`/images/article/boat.jpg`}
             alt="Autonomous underwater robots deployed near a research boat"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"

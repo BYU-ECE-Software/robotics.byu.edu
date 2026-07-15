@@ -23,7 +23,6 @@ export default function PageHero({
   heroSubtext?: string;
   children?: React.ReactNode;
 }) {
-  const basePath = nextConfig.env?.NEXT_PUBLIC_BASE_PATH ?? "";
   const imageStyle = {
     height: typeof height === "number" ? `${height}px` : height,
   } as React.CSSProperties;
@@ -32,7 +31,7 @@ export default function PageHero({
     <section className="relative isolate overflow-hidden bg-[#002e5d] text-white">
       <div className="absolute inset-0 -z-20" style={imageStyle}>
         <Image
-          src={`${basePath}${image}`}
+          src={`${image}`}
           alt=""
           fill
           priority
