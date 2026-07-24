@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FiArrowRight,
   FiArrowUpRight,
@@ -25,6 +26,9 @@ const clubs = [
     href: "https://yrobotics.byu.edu",
     icon: FiNavigation,
     skills: ["Autonomy", "Marine systems", "RoboNation"],
+    image: "/images/clubs/byu-robotics.jpg",
+    imagePosition: "center 42%",
+    imageClass: "scale-[1.02] group-hover:scale-[1.05]",
   },
   {
     name: "Agricultural Robotics",
@@ -34,6 +38,9 @@ const clubs = [
     href: "https://clubs.byu.edu/link/club/18295873488778473",
     icon: FiCpu,
     skills: ["Automation", "Machine learning", "Field systems"],
+    image: "/images/clubs/agricultural-robotics.jpg",
+    imagePosition: "center 40%",
+    imageClass: "scale-[1.02] group-hover:scale-[1.05]",
   },
   {
     name: "Combat Robotics",
@@ -43,6 +50,9 @@ const clubs = [
     href: "https://combatrobotics.byu.edu/",
     icon: FiZap,
     skills: ["CAD", "Fabrication", "Electronics"],
+    image: "/images/clubs/combat-robotics.jpg",
+    imagePosition: "center 46%",
+    imageClass: "scale-[1.02] group-hover:scale-[1.05]",
   },
   {
     name: "Spacecraft Club",
@@ -52,6 +62,9 @@ const clubs = [
     href: "https://spacecraft.byu.edu/club",
     icon: FiTarget,
     skills: ["Embedded systems", "Controls", "Team projects"],
+    image: "/images/clubs/spacecraft.jpg",
+    imagePosition: "center 48%",
+    imageClass: "scale-[1.02] group-hover:scale-[1.05]",
   },
   {
     name: "Mars Rover Team",
@@ -61,6 +74,9 @@ const clubs = [
     href: "https://marsrover.byu.edu/",
     icon: FiDisc,
     skills: ["Autonomy", "Mechatronics", "Systems engineering"],
+    image: "/images/clubs/mars-rover-hero.jpg",
+    imagePosition: "center 56%",
+    imageClass: "scale-[1.02] group-hover:scale-[1.05]",
   },
   {
     name: "Aeronautics",
@@ -70,6 +86,9 @@ const clubs = [
     href: "https://aiaa.byu.edu/",
     icon: FiWind,
     skills: ["Aircraft design", "Aerospace systems", "AIAA"],
+    image: "/images/clubs/aeronautics.jpg",
+    imagePosition: "center 45%",
+    imageClass: "scale-[1.02] group-hover:scale-[1.05]",
   },
 ];
 
@@ -79,8 +98,8 @@ export default function ClubsPage() {
       <PageHero
         title="Student clubs"
         subtitle="Find your people. Build something real. Learn by doing."
-        image="/images/droneChurch2.jpg"
-        position="center 58%"
+        image="/images/clubs/mars-rover-hero.jpg"
+        position="center 54%"
       />
 
       <section className="bg-white py-20 sm:py-28">
@@ -108,55 +127,62 @@ export default function ClubsPage() {
               return (
                 <article
                   key={club.name}
-                  className="group flex min-h-[390px] flex-col bg-white p-8 transition-colors hover:bg-[#f7f9fb] sm:p-10"
+                  className="group flex min-h-[590px] flex-col overflow-hidden bg-white"
                 >
-                  <div className="flex items-start justify-between gap-6">
-                    <span className="flex size-12 items-center justify-center bg-[#e8f2fa] text-xl text-[#0047ba]">
-                      <Icon aria-hidden="true" />
-                    </span>
-                    <span className="font-mono text-xs text-slate-400">
+                  <div className="relative h-56 shrink-0 overflow-hidden sm:h-60 lg:h-56">
+                    <Image
+                      src={club.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className={`object-cover transition duration-500 ${club.imageClass}`}
+                      style={{ objectPosition: club.imagePosition }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#002e5d]/45 via-transparent to-transparent" />
+                    {/* <span className="absolute right-6 top-6 font-mono text-xs text-white/80">
                       0{index + 1}
-                    </span>
+                    </span> */}
                   </div>
 
-                  <p className="mt-9 text-xs font-bold uppercase tracking-[0.2em] text-[#0047ba]">
-                    {club.focus}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold text-[#002e5d] sm:text-3xl">
-                    {club.name}
-                  </h3>
-                  {"note" in club && (
-                    <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
-                      {club.note}
+                  <div className="flex flex-1 flex-col p-8 pt-0 sm:p-10 sm:pt-0">
+                    <span className="relative z-10 -mt-6 mb-8 flex size-12 items-center justify-center border border-slate-200 bg-white text-xl text-[#0047ba] shadow-[0_8px_24px_rgba(0,31,63,.18)] ring-4 ring-white">
+                      <Icon aria-hidden="true" />
+                    </span>
+
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0047ba]">
+                      {club.focus}
                     </p>
-                  )}
-                  <p className="mt-4 max-w-xl leading-7 text-slate-600">
-                    {club.description}
-                  </p>
+                    <h3 className="mt-3 text-2xl font-bold text-[#002e5d] sm:text-3xl">
+                      {club.name}
+                    </h3>
+                    <p className="mt-4 max-w-xl leading-7 text-slate-600">
+                      {club.description}
+                    </p>
 
-                  <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${club.name} focus areas`}>
-                    {club.skills.map((skill) => (
-                      <li
-                        key={skill}
-                        className="border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-500"
-                      >
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${club.name} focus areas`}>
+                      {club.skills.map((skill) => (
+                        <li
+                          key={skill}
+                          className="border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-500"
+                        >
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
 
-                  <a
-                    href={club.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-bold text-[#002e5d]"
-                  >
-                    Visit {club.name}
-                    <FiArrowUpRight
-                      aria-hidden="true"
-                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
-                  </a>
+                    <a
+                      href={club.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-bold text-[#002e5d]"
+                    >
+                      Visit {club.name}
+                      <FiArrowUpRight
+                        aria-hidden="true"
+                        className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </a>
+                  </div>
                 </article>
               );
             })}
