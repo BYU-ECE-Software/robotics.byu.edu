@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiArrowRight, FiBookOpen, FiCompass, FiMail, FiTool } from "react-icons/fi";
+import { FiArrowRight, FiBookOpen, FiCompass, FiMail, FiTool, FiUsers } from "react-icons/fi";
 import Accordion from "@/components/Accordion";
 import PageHero from "@/components/PageHero";
 import { faqs } from "@/data/faqs";
@@ -34,6 +34,14 @@ const opportunities = [
     href: "/reu",
     action: "Explore the REU",
   },
+  {
+    icon: FiUsers,
+    label: "Build with peers",
+    title: "Join a club",
+    description: "Turn ideas into working machines alongside student teams focused on autonomous systems, combat, flight, field, and space.",
+    href: "/clubs",
+    action: "Explore student clubs",
+  },
 ];
 
 export default function GetInvolvedPage() {
@@ -59,7 +67,7 @@ export default function GetInvolvedPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-3">
+          <div className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2">
             {opportunities.map((item) => {
               const Icon = item.icon;
               return (
