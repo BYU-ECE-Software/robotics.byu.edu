@@ -37,10 +37,10 @@ const opportunities = [
   {
     icon: FiUsers,
     label: "Build with peers",
-    title: "Join a club",
+    title: "Join a robotics club",
     description: "Turn ideas into working machines alongside student teams focused on autonomous systems, combat, flight, field, and space.",
     href: "/clubs",
-    action: "Explore student clubs",
+    action: "Explore robotics clubs",
   },
 ];
 

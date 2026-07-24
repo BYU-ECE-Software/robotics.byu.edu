@@ -145,7 +145,7 @@ export default function ClubsPage() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-8 pt-0 sm:p-10 sm:pt-0">
-                    <span className="relative z-10 -mt-6 mb-8 flex size-12 items-center justify-center border border-slate-200 bg-white text-xl text-[#0047ba] shadow-[0_8px_24px_rgba(0,31,63,.18)] ring-4 ring-white">
+                    <span className="relative z-10 -mt-6 mb-8 flex size-12 items-center justify-center bg-white text-xl text-[#0047ba] shadow-[0_8px_24px_rgba(0,31,63,.18)] ring-4 ring-white">
                       <Icon aria-hidden="true" />
                     </span>
 
