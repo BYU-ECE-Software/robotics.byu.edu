@@ -25,7 +25,15 @@ const clubs = [
     href: "https://yrobotics.byu.edu",
     icon: FiNavigation,
     skills: ["Autonomy", "Marine systems", "RoboNation"],
-    note: "Website coming soon",
+  },
+  {
+    name: "Agricultural Robotics",
+    focus: "Robotics for the field",
+    description:
+      "Apply sensing, automation, machine learning, and mechanical design to real agricultural challenges.",
+    href: "https://clubs.byu.edu/link/club/18295873488778473",
+    icon: FiCpu,
+    skills: ["Automation", "Machine learning", "Field systems"],
   },
   {
     name: "Combat Robotics",
@@ -35,24 +43,6 @@ const clubs = [
     href: "https://combatrobotics.byu.edu/",
     icon: FiZap,
     skills: ["CAD", "Fabrication", "Electronics"],
-  },
-  {
-    name: "Agricultural Robotics",
-    focus: "Robotics for the field",
-    description:
-      "Apply sensing, automation, machine learning, and mechanical design to real agricultural challenges.",
-    href: "https://cropbiomechanics.byu.edu",
-    icon: FiCpu,
-    skills: ["Automation", "Machine learning", "Field systems"],
-  },
-  {
-    name: "Aeronautics",
-    focus: "Design for flight",
-    description:
-      "Explore aircraft design, aerospace systems, technical projects, and professional development through BYU's AIAA student chapter.",
-    href: "https://aiaa.byu.edu/",
-    icon: FiWind,
-    skills: ["Aircraft design", "Aerospace systems", "AIAA"],
   },
   {
     name: "Spacecraft Club",
@@ -71,6 +61,15 @@ const clubs = [
     href: "https://marsrover.byu.edu/",
     icon: FiDisc,
     skills: ["Autonomy", "Mechatronics", "Systems engineering"],
+  },
+  {
+    name: "Aeronautics",
+    focus: "Design for flight",
+    description:
+      "Explore aircraft design, aerospace systems, technical projects, and professional development through BYU's AIAA student chapter.",
+    href: "https://aiaa.byu.edu/",
+    icon: FiWind,
+    skills: ["Aircraft design", "Aerospace systems", "AIAA"],
   },
 ];
 
@@ -146,24 +145,18 @@ export default function ClubsPage() {
                     ))}
                   </ul>
 
-                  {"note" in club ? (
-                    <p className="mt-auto pt-8 text-sm font-bold text-slate-500">
-                      {club.href.replace("https://", "")}
-                    </p>
-                  ) : (
-                    <a
-                      href={club.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-bold text-[#002e5d]"
-                    >
-                      Visit {club.name}
-                      <FiArrowUpRight
-                        aria-hidden="true"
-                        className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      />
-                    </a>
-                  )}
+                  <a
+                    href={club.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-bold text-[#002e5d]"
+                  >
+                    Visit {club.name}
+                    <FiArrowUpRight
+                      aria-hidden="true"
+                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </a>
                 </article>
               );
             })}
