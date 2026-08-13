@@ -23,3 +23,10 @@ export type FAQ = {
   question: string;
   answer: ReactNode;
 };
+
+export type Course = {
+  courseNumber: string;
+  title: string;
+  whenOffered: string;
+  relationshipToRobotics: string;
+};

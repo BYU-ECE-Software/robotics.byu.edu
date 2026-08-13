@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiArrowRight, FiArrowUpRight, FiBook, FiCode, FiCpu, FiSettings } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight, FiBook, FiBookOpen, FiCode, FiCpu, FiSettings } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -54,7 +54,7 @@ export default function ResourcesPage() {
       </section>
 
       <section className="bg-[#f2f5f7] py-20">
-        <div className="container-wide grid gap-6 md:grid-cols-2">
+        <div className="container-wide grid gap-6 md:grid-cols-3">
           <Link href="/research-labs" className="group flex items-center justify-between gap-6 bg-[#002e5d] p-8 text-white sm:p-10">
             <div>
               <FiBook aria-hidden="true" className="text-3xl text-[#7fbeeb]" />
@@ -70,6 +70,14 @@ export default function ResourcesPage() {
               <p className="mt-3 text-white/75">Find practical next steps for joining the community.</p>
             </div>
             <FiArrowRight aria-hidden="true" className="shrink-0 text-2xl transition-transform group-hover:translate-x-1" />
+          </Link>
+          <Link href="/courses" className="group flex items-center justify-between gap-6 bg-white p-8 text-[#002e5d] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+            <div>
+              <FiBookOpen aria-hidden="true" className="text-3xl text-[#0047ba]" />
+              <h2 className="mt-6 text-2xl font-bold">Courses</h2>
+              <p className="mt-3 text-slate-600">Discover classes that build robotics knowledge and skills.</p>
+            </div>
+            <FiArrowRight aria-hidden="true" className="shrink-0 text-2xl text-[#0047ba] transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </section>
