@@ -9,6 +9,7 @@ const siteLinks = [
   { href: "/faculty", label: "Faculty" },
   { href: "/reu", label: "Robotics Pioneers REU" },
   { href: "/get-involved", label: "Get Involved" },
+  { href: "/clubs", label: "Student Clubs" },
 ];
 
 const departmentLinks = [
