@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiArrowUpRight, FiMail, FiMapPin } from "react-icons/fi";
-import nextConfig from "@/next.config";
 
 const siteLinks = [
   { href: "/research-labs", label: "Research Labs" },
@@ -116,6 +115,15 @@ export default function Footer() {
           <div className="flex gap-5">
             <a href="https://www.byu.edu/privacy" className="hover:text-white">Privacy</a>
             <a href="https://www.byu.edu/accessibility" className="hover:text-white">Accessibility</a>
+            <a
+              href="https://github.com/BYU-ECE-Software/robotics.byu.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-white"
+            >
+              <FaGithub aria-hidden="true" />
+              Site Repository
+            </a>
           </div>
         </div>
       </div>
